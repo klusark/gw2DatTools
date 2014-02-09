@@ -65,6 +65,7 @@ const ANDatInterface::FileRecord& ANDatInterfaceImpl::getFileRecordForBaseId(con
 		auto m = _pMapping->entries[i];
 		if (m.id == iBaseId) {
 			id = m.mftIndex;
+			break;
 		}
 	}
 	auto &entry = _pMft->entries[id - 1];
