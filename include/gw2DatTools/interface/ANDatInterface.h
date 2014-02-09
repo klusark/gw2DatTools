@@ -29,8 +29,7 @@ class GW2DATTOOLS_API ANDatInterface
         virtual ~ANDatInterface() {};
         
         virtual void getBuffer(const ANDatInterface::FileRecord& iFileRecord, uint32_t& ioOutputSize, uint8_t* ioBuffer) = 0;
-        
-        virtual const FileRecord& getFileRecordForFileId(const uint32_t& iFileId) const = 0;
+
         virtual const FileRecord& getFileRecordForBaseId(const uint32_t& iBaseId) const = 0;
         
         virtual const std::vector<FileRecord>& getFileRecordVect() const = 0;
