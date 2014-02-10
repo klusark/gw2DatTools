@@ -16,8 +16,6 @@ class BitArray
         
         template <typename OutputType>
         void readLazy(uint8_t iBitNumber, OutputType& oValue) const;
-        template <uint8_t isBitNumber, typename OutputType>
-        void readLazy(OutputType& oValue) const;
         template <typename OutputType>
         void readLazy(OutputType& oValue) const;
         

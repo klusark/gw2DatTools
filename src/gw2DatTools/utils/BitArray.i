@@ -74,20 +74,10 @@ void BitArray<IntType>::readLazy(uint8_t iBitNumber, OutputType& oValue) const
 }
 
 template <typename IntType>
-template <uint8_t isBitNumber, typename OutputType>
-void BitArray<IntType>::readLazy(OutputType& oValue) const
-{
-    static_assert(isBitNumber <= sizeof(OutputType) * 8, "isBitNumber must be inferior to the size of the requested type.");
-    static_assert(isBitNumber <= sizeof(IntType) * 8, "isBitNumber must be inferior to the size of the internal type.");
-    
-    readImpl(isBitNumber, oValue);
-}
-
-template <typename IntType>
 template <typename OutputType>
 void BitArray<IntType>::readLazy(OutputType& oValue) const
 {
-    readLazy<sizeof(OutputType) * 8>(oValue);
+    readLazy(sizeof(OutputType) * 8, oValue);
 }
 
 template <typename IntType>
@@ -109,7 +99,7 @@ void BitArray<IntType>::read(OutputType& oValue) const
     {
         throw exception::Exception("Not enough bits available to read the value.");
     }
-    readLazy<isBitNumber>(oValue);
+    readLazy(isBitNumber, oValue);
 }
 
 template <typename IntType>
