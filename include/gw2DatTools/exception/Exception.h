@@ -2,6 +2,7 @@
 #define GW2DATTOOLS_EXCEPTION_EXCEPTION_H
 
 #include <exception>
+#include <string>
 
 #include "gw2DatTools/dllMacros.h"
 
@@ -12,9 +13,11 @@ namespace exception
 
 class GW2DATTOOLS_API Exception: public std::exception
 {
+        std::string reason;
     public:
         Exception(const char* iReason);
         virtual ~Exception();
+        virtual const char *what() const throw() { return reason.c_str(); }
 };
 
 }

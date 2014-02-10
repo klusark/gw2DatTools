@@ -32,7 +32,7 @@ template <typename IntType>
 void HuffmanTree<SymbolType, sNbBitsHash, sMaxCodeBitsLength, sMaxSymbolValue>::readCode(utils::BitArray<IntType>& iBitArray, SymbolType& oSymbol) const
 {
     uint32_t aHashValue;
-    iBitArray.readLazy<sNbBitsHash>(aHashValue);
+    iBitArray.readLazy(aHashValue);
     
     if (_symbolValueHashExistenceArray[aHashValue])
     {
