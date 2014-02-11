@@ -29,4 +29,4 @@ include/gw2DatTools/interface/ANDatInterface.h
 add_library(gw2DatTools SHARED ${SOURCES} ${HEADERS})
 
 install(TARGETS gw2DatTools DESTINATION "lib")
-install(DIRECTORY include DESTINATION "include")
+install(DIRECTORY include/gw2DatTools DESTINATION "include")
